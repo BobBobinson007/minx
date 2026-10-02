@@ -1,0 +1,2 @@
+# minx
+MINX – Minecraft Server

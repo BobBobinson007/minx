@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MINX — Minecraft Server</title>
-  <meta name="description" content="MINX – Minecraft Min Server offizielle Website. Server-Status, Statistiken, Tode, Skins und mehr.">
+  <title>MINX — Minecraft Min Server</title>
+  <meta name="description" content="MINX – Privater Minecraft Min-Server mit eigenem Wirtschaftssystem. Java · Fabric 26.2.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>M</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>M</text></svg>">
 </head>
 <body>
 
@@ -14,66 +14,100 @@
   <a href="/minx/" class="brand">MINX</a>
   <a href="/minx/" class="active">Home</a>
   <a href="/minx/stats/">Stats</a>
-  <a href="/minx/skins/">Skins</a>
   <a href="/minx/privacy/">Datenschutz</a>
 </nav>
 
 <main>
 
+  <!-- ─── HERO ─── -->
   <section class="hero">
     <h1>MINX</h1>
-    <p class="subtitle">Minecraft Server</p>
+    <p class="subtitle">Minecraft Min Server</p>
     <p>
-      Privater Minecraft Min-Server von <strong>ZickZackBoss</strong>
-      &amp; <strong>BobBobinson007</strong>.<br>
-      Java-Edition · Fabric 26.2 · Eigenes Min-Wirtschaftssystem.
+      Privater Min-Server mit <strong>eigenem Wirtschaftssystem</strong>.
+      Java-Edition · Fabric 26.2 · Handeln, Bauen, Überleben.
     </p>
     <div class="actions">
       <a href="/minx/stats/" class="btn btn-primary">Statistiken →</a>
-      <a href="/minx/skins/" class="btn">Skins</a>
       <a href="/minx/privacy/" class="btn">Datenschutz</a>
     </div>
   </section>
 
   <!-- ─── Server Status ─── -->
   <section>
-    <h2>Server-Status</h2>
+    <h2>Jetzt live</h2>
     <div class="card">
-      <div class="card-header">Live</div>
-      <div id="server-status">
+      <div class="card-header">Server-Status</div>
+      <div id="server-status" style="margin-bottom:14px;">
         <span id="status-dot" class="dot offline"></span>
         <span id="status-label">Prüfe…</span>
       </div>
-      <div class="row"><span class="k">Spieler</span><span id="status-players" class="v">—</span></div>
+      <div class="row"><span class="k">Spieler online</span><span id="status-players" class="v">—</span></div>
       <div class="row"><span class="k">Adresse</span><span class="v"><code>wohixtkjsylk3md2.myfritz.net</code></span></div>
-      <div class="row"><span class="k">Edition</span><span class="v">Java</span></div>
-      <div class="row"><span class="k">Version</span><span class="v">26.2 · Fabric</span></div>
-      <p class="mt-16 text-muted" style="font-size:13px;">
-        Verbinden: Minecraft → Mehrspieler → Server hinzufügen → Adresse eingeben.
-      </p>
+      <div class="row"><span class="k">Edition</span><span class="v">Java · Fabric 26.2</span></div>
     </div>
   </section>
 
-  <!-- ─── Quick Stats ─── -->
+  <!-- ─── Über ─── -->
   <section>
-    <h2>Auf einen Blick</h2>
+    <h2>Was ist MINX?</h2>
+    <div class="card">
+      <p>
+        MINX ist ein privater Minecraft Min-Server von
+        <strong>ZickZackBoss</strong> &amp; <strong>BobBobinson007</strong>.
+        Im Gegensatz zu öffentlichen Servern gibt es hier:
+      </p>
+      <ul>
+        <li>🔨 Eigenes <strong>Min-Wirtschaftssystem</strong> – Handel und Ressourcenkreisläufe</li>
+        <li>📊 Automatische <strong>Verlust-Erfassung</strong> – jedes Item wird geledgert</li>
+        <li>🎮 Reine <strong>Java-Edition</strong> mit Fabric-Mods</li>
+        <li>👥 Kleine, vertraute <strong>Community</strong> – kein Griefing, kein Chaos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── Stats Teaser ─── -->
+  <section>
+    <h2>Server in Zahlen</h2>
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="number"><span id="death-total">0</span></div>
-        <div class="label">Erfasste Verluste</div>
-      </div>
       <div class="stat-card">
         <div class="number">7</div>
         <div class="label">Spieler</div>
       </div>
       <div class="stat-card">
-        <div class="number">12+</div>
-        <div class="label">Server-Skins</div>
+        <div class="number">630+</div>
+        <div class="label">Items verloren</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">#1</div>
+        <div class="label">TheRealDmseife</div>
       </div>
       <div class="stat-card">
         <div class="number">⚫</div>
         <div class="label">Kein Tracking</div>
       </div>
+    </div>
+    <p class="text-center mt-16">
+      <a href="/minx/stats/" class="btn btn-primary">Alle Statistiken →</a>
+    </p>
+  </section>
+
+  <!-- ─── Server beitreten ─── -->
+  <section>
+    <h2>Beitreten</h2>
+    <div class="card">
+      <p>
+        Du willst mitspielen? So geht's:
+      </p>
+      <ol style="padding-left:18px; color:var(--muted); font-size:14px; line-height:1.8;">
+        <li>Minecraft Java-Edition starten</li>
+        <li>→ <strong>Mehrspieler</strong> → <strong>Server hinzufügen</strong></li>
+        <li>Adresse eingeben: <code>wohixtkjsylk3md2.myfritz.net</code></li>
+        <li>Verbinden &amp; loslegen</li>
+      </ol>
+      <p class="mt-16 text-muted" style="font-size:13px;">
+        Wichtig: Der Server ist privat – Zugang nur mit Freischaltung durch einen Admin.
+      </p>
     </div>
   </section>
 

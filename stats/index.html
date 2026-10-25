@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Statistiken — MINX</title>
-  <meta name="description" content="MINX Minecraft Server Statistiken – Tode, Verluste, Spieler-Rankings.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>M</text></svg>">
+  <meta name="description" content="MINX Minecraft Server – Tode, Verluste, Achievements und Spieler-Rankings.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>M</text></svg>">
 </head>
 <body>
 
@@ -14,94 +14,114 @@
   <a href="/minx/" class="brand">MINX</a>
   <a href="/minx/">Home</a>
   <a href="/minx/stats/" class="active">Stats</a>
-  <a href="/minx/skins/">Skins</a>
   <a href="/minx/privacy/">Datenschutz</a>
 </nav>
 
 <main>
 
   <section>
-    <h1 style="font-size:clamp(36px,8vw,64px); letter-spacing:.06em;">Statistiken</h1>
-    <p class="text-muted" style="font-size:14px; margin-bottom:6px;">
-      Live-Status + erfasste Verlustdaten seit Serverstart.
+    <h1>Statistiken</h1>
+    <p class="text-muted" style="font-size:14px;">
+      Alle Daten stammen aus dem internen Server-Ledger. Nichts erfunden.
     </p>
   </section>
 
-  <!-- ─── Server Live ─── -->
+  <!-- ─── Live Status ─── -->
   <section>
-    <h2>Server-Status</h2>
+    <h2>Server live</h2>
     <div class="card">
       <div id="server-status" style="margin-bottom:12px;">
         <span id="status-dot" class="dot offline"></span>
         <span id="status-label">Prüfe…</span>
       </div>
       <div class="row"><span class="k">Spieler online</span><span id="status-players" class="v">—</span></div>
+      <div class="row"><span class="k">Adresse</span><span class="v"><code>wohixtkjsylk3md2.myfritz.net</code></span></div>
     </div>
   </section>
 
-  <!-- ─── Death Stats ─── -->
+  <!-- ─── Achievements ─── -->
+  <section>
+    <h2>Achievements</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">📅</div>
+        <div class="label">Erster Tod<br><span style="color:#fff;font-weight:600;">LuisCrafter92</span><br><span class="text-muted" style="font-size:11px;">2026-10-22 19:15</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">💀</div>
+        <div class="label">Meiste Tode<br><span style="color:#fff;font-weight:600;">TheRealDmseife</span><br><span class="text-muted" style="font-size:11px;">222 Netto-Verluste</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">⚰️</div>
+        <div class="label">Größter Einzelverlust<br><span style="color:#fff;font-weight:600;">TheRealDmseife</span><br><span class="text-muted" style="font-size:11px;">21 Items auf einmal</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">🛡️</div>
+        <div class="label">Letzter Überlebender<br><span style="color:#fff;font-weight:600;">PaladinEnzym661</span><br><span class="text-muted" style="font-size:11px;">Nur 17 Verluste</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">🗺️</div>
+        <div class="label">Gefährlichster Ort<br><span style="color:#fff;font-weight:600;">-417/63/-1410</span><br><span class="text-muted" style="font-size:11px;">21 Items verloren</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="number" style="font-size:32px;">👑</div>
+        <div class="label">Server-Betreiber<br><span style="color:#fff;font-weight:600;">BobBobinson007</span><br><span class="text-muted" style="font-size:11px;">152 Verluste</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Gesamt-Verluste ─── -->
   <section>
     <h2>Verluststatistik</h2>
 
     <div class="stats-grid">
       <div class="stat-card">
         <div class="number"><span id="death-total">0</span></div>
-        <div class="label">Erfasste Netto-Verluste</div>
+        <div class="label">Netto-Verluste gesamt</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">5</div>
+        <div class="label">Totem-Entnahmen (Tode)</div>
       </div>
       <div class="stat-card">
         <div class="number">7</div>
-        <div class="label">Aktive Spieler</div>
-      </div>
-      <div class="stat-card">
-        <div class="number">630+</div>
-        <div class="label">Items verloren</div>
+        <div class="label">Spieler mit Verlusten</div>
       </div>
     </div>
   </section>
 
   <!-- ─── Leaderboard ─── -->
   <section>
-    <h2>Rangliste – Meiste Verluste</h2>
+    <h2>Rangliste</h2>
     <ol class="leaderboard card" id="death-leaderboard">
-      <!-- populated by js -->
+      <!-- js -->
     </ol>
   </section>
 
-  <!-- ─── Recent Deaths ─── -->
+  <!-- ─── Letzte Verluste ─── -->
   <section>
     <h2>Letzte Verluste</h2>
     <div class="card" id="recent-deaths">
-      <div class="card-header">Zuletzt erfasst</div>
-      <div class="row"><span class="k">TheRealDmseife</span><span class="v">diamond ×1</span></div>
-      <div class="row"><span class="k">TheRealDmseife</span><span class="v">totem_of_undying ×1</span></div>
-      <div class="row"><span class="k">LuisCrafter92</span><span class="v">firework_rocket ×1</span></div>
-      <div class="row"><span class="k">Captifipo</span><span class="v">firework_rocket ×1</span></div>
-      <div class="row"><span class="k">PaladinEnzym661</span><span class="v">cooked_cod ×1</span></div>
+      <div class="card-header">Letzte Ledger-Einträge</div>
       <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_spear ×1</span></div>
       <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_helmet ×1</span></div>
       <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_spear ×1</span></div>
+      <div class="row"><span class="k">Captifipo</span><span class="v">firework_rocket ×1</span></div>
+      <div class="row"><span class="k">LuisCrafter92</span><span class="v">firework_rocket ×1</span></div>
+      <div class="row"><span class="k">TheRealDmseife</span><span class="v">diamond ×1</span></div>
+      <div class="row"><span class="k">TheRealDmseife</span><span class="v">totem_of_undying ×1</span></div>
     </div>
-
-    <p class="text-muted mt-16" style="font-size:13px;">
-      Alle Verlustdaten stammen aus dem internen Ledger-System des Servers
-      (Items entfernt vs. zurückgelegt). Nur Netto-Verluste werden erfasst.
-    </p>
   </section>
 
-  <!-- ─── About Stats ─── -->
+  <!-- ─── Datenschutz ─── -->
   <section>
-    <h2>Über die Statistik</h2>
+    <h2>Datenschutz</h2>
     <div class="card">
       <p class="text-muted" style="font-size:14px; line-height:1.7;">
-        Die Verlustdaten werden automatisch vom Server-Ledger aggregiert.
-        Erfasst werden <strong>Netto-Verluste</strong> – also Items, die aus
-        Behältern entnommen wurden, aber nicht zurückgelegt wurden.
-        Totem-Entnahmen werden als Tode gewertet.
-      </p>
-      <p class="text-muted mt-16" style="font-size:14px; line-height:1.7;">
-        <strong>Datenschutz:</strong> Es werden keine IPs, Realdaten oder
-        Browser-Informationen gespeichert. Siehe
-        <a href="/minx/privacy/" style="color:var(--fg);">Datenschutz</a>.
+        Diese Statistiken enthalten <strong>keine</strong> IPs, Realdaten oder
+        Browser-Informationen. Es werden nur In-Game-Name und Item-Verluste
+        erfasst. Siehe <a href="/minx/privacy/" style="color:var(--fg);">Datenschutz</a>.
       </p>
     </div>
   </section>
@@ -115,6 +135,6 @@
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

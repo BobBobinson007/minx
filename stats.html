@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistiken — MINX</title>
+  <meta name="description" content="MINX Minecraft Server Statistiken – Tode, Verluste, Spieler-Rankings.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>M</text></svg>">
+</head>
+<body>
+
+<nav>
+  <a href="/minx/" class="brand">MINX</a>
+  <a href="/minx/">Home</a>
+  <a href="/minx/stats" class="active">Stats</a>
+  <a href="/minx/skins">Skins</a>
+  <a href="/minx/privacy">Datenschutz</a>
+</nav>
+
+<main>
+
+  <section>
+    <h1 style="font-size:clamp(36px,8vw,64px); letter-spacing:.06em;">Statistiken</h1>
+    <p class="text-muted" style="font-size:14px; margin-bottom:6px;">
+      Live-Status + erfasste Verlustdaten seit Serverstart.
+    </p>
+  </section>
+
+  <!-- ─── Server Live ─── -->
+  <section>
+    <h2>Server-Status</h2>
+    <div class="card">
+      <div id="server-status" style="margin-bottom:12px;">
+        <span id="status-dot" class="dot offline"></span>
+        <span id="status-label">Prüfe…</span>
+      </div>
+      <div class="row"><span class="k">Spieler online</span><span id="status-players" class="v">—</span></div>
+    </div>
+  </section>
+
+  <!-- ─── Death Stats ─── -->
+  <section>
+    <h2>Verluststatistik</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="number"><span id="death-total">0</span></div>
+        <div class="label">Erfasste Netto-Verluste</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">7</div>
+        <div class="label">Aktive Spieler</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">630+</div>
+        <div class="label">Items verloren</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Leaderboard ─── -->
+  <section>
+    <h2>Rangliste – Meiste Verluste</h2>
+    <ol class="leaderboard card" id="death-leaderboard">
+      <!-- populated by js -->
+    </ol>
+  </section>
+
+  <!-- ─── Recent Deaths ─── -->
+  <section>
+    <h2>Letzte Verluste</h2>
+    <div class="card" id="recent-deaths">
+      <div class="card-header">Zuletzt erfasst</div>
+      <div class="row"><span class="k">TheRealDmseife</span><span class="v">diamond ×1</span></div>
+      <div class="row"><span class="k">TheRealDmseife</span><span class="v">totem_of_undying ×1</span></div>
+      <div class="row"><span class="k">LuisCrafter92</span><span class="v">firework_rocket ×1</span></div>
+      <div class="row"><span class="k">Captifipo</span><span class="v">firework_rocket ×1</span></div>
+      <div class="row"><span class="k">PaladinEnzym661</span><span class="v">cooked_cod ×1</span></div>
+      <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_spear ×1</span></div>
+      <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_helmet ×1</span></div>
+      <div class="row"><span class="k">LuisCrafter92</span><span class="v">diamond_spear ×1</span></div>
+    </div>
+
+    <p class="text-muted mt-16" style="font-size:13px;">
+      Alle Verlustdaten stammen aus dem internen Ledger-System des Servers
+      (Items entfernt vs. zurückgelegt). Nur Netto-Verluste werden erfasst.
+    </p>
+  </section>
+
+  <!-- ─── About Stats ─── -->
+  <section>
+    <h2>Über die Statistik</h2>
+    <div class="card">
+      <p class="text-muted" style="font-size:14px; line-height:1.7;">
+        Die Verlustdaten werden automatisch vom Server-Ledger aggregiert.
+        Erfasst werden <strong>Netto-Verluste</strong> – also Items, die aus
+        Behältern entnommen wurden, aber nicht zurückgelegt wurden.
+        Totem-Entnahmen werden als Tode gewertet.
+      </p>
+      <p class="text-muted mt-16" style="font-size:14px; line-height:1.7;">
+        <strong>Datenschutz:</strong> Es werden keine IPs, Realdaten oder
+        Browser-Informationen gespeichert. Siehe
+        <a href="/minx/privacy" style="color:var(--fg);">Datenschutz</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    MINX · by ZickZackBoss &amp; BobBobinson007 ·
+    <a href="/minx/privacy">Datenschutz</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
